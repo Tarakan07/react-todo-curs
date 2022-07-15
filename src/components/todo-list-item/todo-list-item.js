@@ -28,7 +28,6 @@ export default class TodoListItem extends Component {
 	//     console.log(this.props.label);
 	//   };
 	// }
-
 	render() {
 		const { label } = this.props;
 
