@@ -11,11 +11,13 @@ export default class ItemAddForm extends Component {
 		});
 	};
 	onSubmit = (e) => {
-		e.preventDefault()``;
+		e.preventDefault();
 		this.props.addItem(this.state.label);
+		this.setState({
+			label: "",
+		});
 	};
 	render() {
-		const addItem = this.props.addItem;
 		return (
 			<form className="item-add-form" onSubmit={this.onSubmit}>
 				<input
@@ -23,6 +25,7 @@ export default class ItemAddForm extends Component {
 					className="form-control"
 					onChange={this.onLabelChange}
 					placeholder="Enter you item"
+					value={this.state.label}
 				/>
 				<button>
 					<span>Add Item</span>
